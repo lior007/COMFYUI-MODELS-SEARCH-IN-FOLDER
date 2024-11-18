@@ -64,3 +64,7 @@ Clears the cache.
 
 GET /health
 Checks server status.
+
+![ex-1](https://raw.githubusercontent.com/lior007/COMFYUI-MODELS-SERCH-IN-FOLDER/main/ex-1.png)
+
+![ex-2](https://raw.githubusercontent.com/lior007/COMFYUI-MODELS-SERCH-IN-FOLDER/main/ex-2.png)
