@@ -27,7 +27,7 @@ pip install -e .
 
 **USAGE**
 1. Start the server:
-2. 
+ 
 python src/server.py
 
 or
