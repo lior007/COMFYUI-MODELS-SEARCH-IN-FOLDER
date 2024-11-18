@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5f5f5;
+    --border-color: #ddd;
+    --text-color: #333;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* The search part */
+.search-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.path-input,
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px 15px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    width: calc(100% - 120px);
+    margin-bottom: 0;
+    border-radius: 6px 0 0 6px;
+}
+
+.path-input:focus,
+.search-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.search-button {
+    width: 120px;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.search-button:hover {
+    background-color: #357abd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* results */
+.results {
+    margin-top: 20px;
+}
+
+.folder {
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.folder-header {
+    background-color: #f8f9fa;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.folder-header:hover {
+    background-color: #e9ecef;
+}
+
+.folder-content {
+    padding: 0;
+}
+
+.file {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.file:hover {
+    background-color: #f8f9fa;
+}
+
+.file::after {
+    content: "▼";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.file:hover::after {
+    opacity: 1;
+}
+
+.file-details {
+    margin: 10px 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    font-size: 0.9em;
+    line-height: 1.6;
+    direction: rtl;
+}
+
+.file-type {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.path-display {
+    font-family: monospace;
+    word-break: break-all;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 8px 0;
+    direction: ltr;
+    font-size: 1.1em;  /* increasing the font */
+    font-weight: 500;  /* emphasis */
+    color: #4a90e2;    /* Same color as title */
+    line-height: 1.4;  /* spacing between lines */
+}
+/* If you want to emphasize the path even more */
+.file-details .path-display {
+    background: #EDF5FF; /* A light background in a matching shade */
+    border-color: #4a90e2;
+}
+
+/* הודעות */
+.error-message,
+.success-message {
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: none;
+}
+
+.error-message {
+    background-color: #fff3f3;
+    border: 1px solid #ffcdd2;
+    color: #d32f2f;
+}
+
+.success-message {
+    background-color: #f1f8e9;
+    border: 1px solid #dcedc8;
+    color: #689f38;
+}
+
+/* אנימציית טעינה */
+.loading {
+    text-align: center;
+    padding: 20px;
+    display: none;
+}
+
+.loading::after {
+    content: "טוען...";
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: "loading"; }
+    40% { content: "loading.."; }
+    60%, 100% { content: "loading..."; }
+}
+
+/* Statistics and counting */
+.file-count {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-right: 10px;
+}
+
+.folder-arrow {
+    margin-right: 10px;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+/* search highlight */
+.highlight {
+    background-color: #fff3cd;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+/* Status bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    border: 1px solid #eee;
+}
+
+/* Hebrew display support */
+.container, .search-section, .folder-header, .file, .file-details {
+    direction: rtl;
+}
+
+/* Small screen support */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .search-input {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        width: 100%;
+        border-radius: 6px;
+    }
+}

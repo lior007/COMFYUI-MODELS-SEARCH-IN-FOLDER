@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMFYUI PORTABLE MODELS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>COMFYUI PORTABLE MODELS SERCH IN FOLDER</h1>
+        
+        <div class="search-section">
+            <input type="text" 
+                   class="path-input" 
+                   id="basePath" 
+                   placeholder="Enter a path to scan..."
+                   title="Path to the models folder">
+            
+            <div style="display: flex;">
+                <input type="text" 
+                       class="search-input" 
+                       id="searchInput" 
+                       placeholder="Look for models..."
+                       title="Type to search by file name">
+                <button class="search-button" 
+                        id="searchButton" 
+                        onclick="handleSearch()">Search</button>
+            </div>
+            
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+            <div class="loading" id="loadingIndicator"></div>
+        </div>
+
+        <div id="results" class="results"></div>
+
+        <div class="status-bar">
+            <span id="statsInfo"></span>
+            <button onclick="clearCache()" 
+                    class="search-button" 
+                    style="width: auto; padding: 5px 10px;">
+                Clear cache
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
