@@ -27,12 +27,18 @@ pip install -e .
 
 **USAGE**
 1. Start the server:
+2. 
 python src/server.py
+
 or
+
 python -m src.server
 
-2. Access in browser at:
+
+4. Access in browser at:
+   
 http://localhost:3000
+
 
 **FEATURES**
 - Model folder scanning
