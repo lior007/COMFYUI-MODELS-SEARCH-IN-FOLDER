@@ -22,6 +22,7 @@ source comfyui_scanner_env/bin/activate
 pip install -r requirements.txt
 
 4. The pip install -e . command installs a Python project in 'editable' mode, allowing immediate code changes to reflect without reinstallation.
+   
 pip install -e .
 
 **USAGE**
